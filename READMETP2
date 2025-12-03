@@ -1,0 +1,33 @@
+# TP2 - Moteur de Jeu 2D en Java
+
+Ce projet est un debut de moteur de jeu en 2D realise dans le cadre du TP2. Il permet d'afficher un donjon a l'aide de tuiles (sprites), de controler un heros et de gerer les collisions avec les murs.
+
+## Fonctionnalites
+* Affichage graphique : Utilisation de Java Swing (JFrame/JPanel) pour dessiner le jeu.
+* Gestion des Sprites : Decoupage automatique d'une planche d'images (tileSet.png) via la classe TileManager.
+* Deplacement : Le heros se deplace de maniere fluide avec les fleches directionnelles du clavier.
+* Physique et Collisions : Le heros ne peut pas traverser les murs grace a un systeme de HitBox.
+* Design Pattern : Utilisation du Singleton pour la classe Hero (un seul heros unique).
+
+##Techniques Abordes
+* Heritage : Architecture de classes (Hero > DynamicThings > AnimatedThings > SolidThings > Things).
+* Singleton : Pour garantir l'unicite de l'instance du heros.
+* Boucle de jeu (Game Loop) : Utilisation d'un Timer pour rafraichir l'affichage et la physique (20 FPS).
+* Gestion d'evenements : KeyListener pour les entrees clavier.
+
+## Structure du Projet
+* src/ : Contient tout le code source Java.
+    * MainInterface.java : Le point d'entree (lance la fenetre et le jeu).
+    * Dungeon.java : Genere la carte et place les obstacles.
+    * Hero.java : Le personnage controlable (Singleton).
+    * TileManager.java : Charge et decoupe les images.
+    * GameRender.java : Gere l'affichage graphique.
+* tileSet.png : La planche d'images (doit etre placee a la racine du projet).
+
+## Comment lancer le jeu
+1. S'assurer que le fichier "tileSet.png" est bien situe a la racine du dossier projet (pas dans src).
+2. Compiler et executer la classe MainInterface.
+3. Utiliser les fleches du clavier pour bouger le heros.
+
+---
+Projet realise par Nabil dans le cadre du TP Java 2D.
